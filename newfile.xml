@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<map>
+    <int name="myint" value="56"/>
+    <float name="myfloat" value="0.140000"/>
+    <double name="mydouble" value="569.441500"/>
+    <unsigned name="myunsigned" value="3998572554"/>
+    <string name="mystring">this is hello World!我是中文，XMl编码与源文件编码有关</string>
+    <bool name="mybool" value="1"/>
+</map>
