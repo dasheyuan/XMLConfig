@@ -23,9 +23,7 @@ structure.
 			->putFloat("myfloat", .14f)
 			->putDouble("mydouble",569.4415)
 			->putUnsigned("myunsigned", 3998572554U)
-			->putString("mystring", "this is hello World!我是中文，XMl编码与源
-
-文件编码有关")
+			->putString("mystring", "hello World!")
 			->putBool("mybool", true)
 			->commit();
 
