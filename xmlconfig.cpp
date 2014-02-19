@@ -120,9 +120,9 @@ XMLConfig* XMLConfig::putBool(const char* key, bool value) {
 XMLConfig* XMLConfig::putString(const char* key, const char* value) {
 	if (key == 0 || doc == 0 || root == 0)
 		return this;
-	XMLElement* ele = findElement(XML_CONFIG_XML_CONFIGING, key);
+	XMLElement* ele = findElement(XML_CONFIG_STRING, key);
 	if (ele == 0) {
-		ele = doc->NewElement(XML_CONFIG_XML_CONFIGING);
+		ele = doc->NewElement(XML_CONFIG_STRING);
 		ele->SetAttribute(XML_CONFIG_NAME, key);
 		root->InsertEndChild(ele);
 	} else {
@@ -184,7 +184,7 @@ XMLConfig* XMLConfig::removeBool(const char* key) {
  * remove a string node by name
  */
 XMLConfig* XMLConfig::removeString(const char* key) {
-	return removeValue(XML_CONFIG_XML_CONFIGING, key);
+	return removeValue(XML_CONFIG_STRING, key);
 }
 
 /**
@@ -259,9 +259,33 @@ double XMLConfig::getDouble(const char* key, double defaultValue) {
  * get value by key, if failed, return the default
  */
 const char* XMLConfig::getString(const char* key, const char* defaultValue) {
-	XMLElement* ele = findElement(XML_CONFIG_XML_CONFIGING, key);
+	XMLElement* ele = findElement(XML_CONFIG_STRING, key);
 	if (ele != 0 && ele->GetText() != 0)
 		return ele->GetText();
 	return defaultValue;
+}
+
+bool XMLConfig::isExistInt(const char* key) {
+	return (findElement(XML_CONFIG_INT, key) != 0);
+}
+
+bool XMLConfig::isExistFloat(const char* key) {
+	return (findElement(XML_CONFIG_FLOAT, key) != 0);
+}
+
+bool XMLConfig::isExistDouble(const char* key) {
+	return (findElement(XML_CONFIG_DOUBLE, key) != 0);
+}
+
+bool XMLConfig::isExistUnsigned(const char* key) {
+	return (findElement(XML_CONFIG_UNSIGNED, key) != 0);
+}
+
+bool XMLConfig::isExistBool(const char* key) {
+	return (findElement(XML_CONFIG_BOOL, key) != 0);
+}
+
+bool XMLConfig::isExistString(const char* key) {
+	return (findElement(XML_CONFIG_STRING, key) != 0);
 }
 

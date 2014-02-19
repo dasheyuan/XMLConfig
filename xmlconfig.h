@@ -22,7 +22,7 @@ using namespace tinyxml2;
 #define XML_CONFIG_FLOAT				"float"
 #define XML_CONFIG_DOUBLE				"double"
 #define XML_CONFIG_UNSIGNED			"unsigned"
-#define XML_CONFIG_XML_CONFIGING				"string"
+#define XML_CONFIG_STRING				"string"
 
 class XMLConfig{
 public:
@@ -52,6 +52,13 @@ public:
 	float getFloat(const char* key, float defaultValue);
 	double getDouble(const char* key, double defaultValue);
 	const char* getString(const char* key, const char* defaultValue);
+
+	bool isExistInt(const char* key);
+	bool isExistFloat(const char* key);
+	bool isExistDouble(const char* key);
+	bool isExistUnsigned(const char* key);
+	bool isExistBool(const char* key);
+	bool isExistString(const char* key);
 private:
 	XMLDocument* doc;
 	XMLElement* root;
