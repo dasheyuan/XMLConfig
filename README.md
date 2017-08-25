@@ -17,7 +17,8 @@ structure.
 
 使用方法：
 --------
-###1. 插入或修改：
+### 1. 插入或修改：
+	```
 	XMLConfig* config = new XMLConfig("newfile.xml");
 	config->putInt("myint", 56)
 			->putFloat("myfloat", .14f)
@@ -26,16 +27,19 @@ structure.
 			->putString("mystring", "hello World!")
 			->putBool("mybool", true)
 			->commit();
-
-###2. 删除，清空：
+	```
+### 2. 删除，清空：
+	```
 	config->removeBool("mybool");
 	config->clear();
 	config->commit();
-
-###3. 读取：
+	```
+### 3. 读取：
+	```
 	cout<<"myint:\t"<<config->getInt("myint", 0)<<endl;
 	cout<<"mydouble:\t"<<config->getDouble("mydouble", 0.0)<<endl;
 	cout<<"myfloat:\t"<<config->getFloat("myfloat", 0.0f)<<endl;
 	cout<<"mystring:\t"<<config->getString("mystring", "")<<endl;
 	cout<<"myunsigned:\t"<<config->getUnsigned("myunsigned", 0U)<<endl;
 	cout<<"mybool:\t"<<config->getBool("mybool", false)<<endl;
+	```
